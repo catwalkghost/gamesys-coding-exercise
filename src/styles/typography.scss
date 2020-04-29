@@ -1,0 +1,68 @@
+@import 'variables';
+@import 'mixins';
+@import 'media-queries';
+
+.font-white {
+  color: $white;
+}
+
+.font-giant {
+  font-size: 5rem;
+  @include media-sm {
+    font-size: 3.5rem;
+  }
+}
+
+.font-h3 {
+  font-size: 1.25rem
+}
+
+.font-small {
+  font-size: .8rem;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.text-capitalise {
+  text-transform: capitalize;
+}
+
+//  ---------------------------------------------------------------------------
+// Final classes
+
+.font-counter {
+  @extend .font-giant;
+  @extend .font-black;
+  @extend .text-uppercase;
+}
+
+.counter-separator {
+  padding-bottom: .5rem;
+}
+
+.cash-value {
+  @extend .font-h3;
+  @extend .text-capitalise;
+  @include media-sm {
+    font-size: 1rem;
+  }
+
+}
+
+
+

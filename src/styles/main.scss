@@ -1,0 +1,16 @@
+//@import './node_modules/stylific/scss/stylific';
+// Current version of Stylific has issues with sass loader
+// Importing some required components here:
+
+@import './reset'; // resets native browser styling
+@import './layout';
+@import './mixins';
+
+//@import 'node_modules/stylebox/scss/stylebox'; // allows for easy atomic styles for padding, margins, etc.
+
+// Own SCSS
+@import './media-queries'; // used to set up media queries
+@import './fonts'; // used to set up/import fonts
+@import './typography'; // font styles
+@import './misc'; // custom timer-specific styles
+

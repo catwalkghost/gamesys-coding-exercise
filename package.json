@@ -1,0 +1,53 @@
+{
+  "name": "coding-exercise",
+  "version": "1.0.0",
+  "description": "Coding Exercise for GameSys",
+  "main": "index.js",
+  "repository": "git@bitbucket.org:catwalkghost/coding-exercise.git",
+  "author": "Alex Unku <catwalkghost@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "build": "yarn clean; webpack --config config/webpack-prod-config.js",
+    "clean": "rm -rf build/*",
+    "start:dev": "node config/webpack-dev-server.js",
+    "start:prod": "yarn build; serve build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.5.3",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^6.0.0",
+    "fpx": "^0.7.3",
+    "html-webpack-plugin": "^4.2.0",
+    "node-sass": "^4.14.0",
+    "path": "^0.12.7",
+    "react-helmet": "^6.0.0",
+    "react-hot-loader": "^4.12.20",
+    "sass-loader": "^8.0.2",
+    "sass-resources-loader": "^2.0.3",
+    "style-loader": "^1.2.0",
+    "stylebox": "^0.0.15",
+    "stylific": "^0.13.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.43.0",
+    "webpack-command": "^0.5.0",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2",
+    "write-file-webpack-plugin": "^4.5.1"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-fragment": "^1.0.0",
+    "serve": "^11.3.0"
+  }
+}
