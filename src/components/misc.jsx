@@ -21,7 +21,7 @@ export class Image extends React.Component {
         const {style, url, className} = this.props
         return (
             <img
-                className={`image-preview ${url ? 'image-preview-show' : ''} ${className || ''}`}
+                className={`${className || ''}`}
                 style={style}
                 src={url}
                 alt='image-preview' />
