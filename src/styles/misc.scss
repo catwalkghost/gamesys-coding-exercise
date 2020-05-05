@@ -28,9 +28,14 @@
 .top-image {
   top: 1rem;
   @extend .abs-c;
-  @include media-lg {
-    max-width: 70%;
+  max-width:800px;
+  @include media-md {
+    max-width: 700px;
   }
+  @include media-sm {
+    max-width: 100%;
+  }
+
 }
 
 //  ---------------------------------------------------------------------------
