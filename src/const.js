@@ -6,11 +6,11 @@ export const TITLE = 'You WON a Free Cash Prize!'
 export const JSON_DATA = data
 export const RETINA_SCREEN = window.devicePixelRatio > 1 || (window.matchMedia && window.matchMedia("(-webkit-min-device-pixel-ratio: 1.5),(-moz-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)").matches)
 
-export const RETINA_BG = '/assets/bg-2.jpg'
-export const NON_RETINA_BG = '/assets/bg.jpg'
+export const RETINA_BG = '/assets/bg.jpg'
+export const NON_RETINA_BG = '/assets/bg-2.jpg'
 
-export const RETINA_IMG = '/assets/box-bottom-2.png'
-export const NON_RETINA_IMG = '/assets/box-bottom.png'
+export const RETINA_IMG = '/assets/box-bottom.png'
+export const NON_RETINA_IMG = '/assets/box-bottom-2.png'
 
 // In this scenario we simply expect JSON file to contain an object
 // A more complicated scenario will require checking for specific values

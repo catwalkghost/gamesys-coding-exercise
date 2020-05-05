@@ -31,7 +31,9 @@ export class Timer extends React.Component {
     }
 
     // these are used for fetching data using Fetch API
-    // NOTE: these are not used in the resulting code, kept here to demonstrate
+    // NOTE: these are NOT USED in the resulting code,
+    // kept here to demonstrate how data can be fetched
+    // using promises and fetch
 
     setValue(data){
         const {value} = data
@@ -54,10 +56,10 @@ export class Timer extends React.Component {
     fetchData() {
         // Fetching JSON using fetch/promises.
         // This is to imitate how this potentially can work with an API
-        // NOTE: this is not used in the resulting code, JSON data accessed using import
+        // NOTE: this is NOT USED in the resulting code, JSON data accessed using import
+        // fetchData is only shown here to demonstrate how data can be fetched
+        // using promises and fetch
 
-        // Import can sometimes be used to leverage webpack data splitting
-        // import('./assets/data.json')
         fetch('./assets/data.json')
             .then((res) => res.json())
             .then((data) => {
@@ -142,13 +144,19 @@ export class Timer extends React.Component {
     };
 
     componentDidMount() {
+        // Used for debugging
+        // localStorage.clear()
+        // console.log(data)
+
         // fetchData can be used if a real API is used
         // NOTE: JSON file is accessed using import
         // this.fetchData()
-        this.timeRemaining = JSON.parse(localStorage.getItem('timeRemaining'))
 
         // Interval is set on Mounting
         timerID = setInterval(() => this.onTick(), 1000);
+
+        // Accessing timer state from localStorage
+        this.timeRemaining = JSON.parse(localStorage.getItem('timeRemaining'))
 
         // Getting data from localStorage
         if (localStorage.getItem('timeRemaining')) {
