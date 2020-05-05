@@ -114,6 +114,7 @@
   border-style: solid;
   border-color: rgb(0, 224, 6);
   border-image: initial;
+  padding: .5rem;
   &:hover {
     background: radial-gradient(rgba(0, 224, 6, 0.7), rgba(0, 224, 6, 0.35) 3rem, transparent 70%) rgb(0, 0, 0);
   }
