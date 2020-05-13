@@ -24,87 +24,8 @@ export class Timer extends React.Component {
                 over: false,
         }
 
-        this.onTick     = this.onTick.bind(this)
+        this.onTick = this.onTick.bind(this)
 
-        this.setValue = this.setValue.bind(this)
-        this.setUrl   = this.setUrl.bind(this)
-    }
-
-    // these are used for fetching data using Fetch API
-    // NOTE: these are NOT USED in the resulting code,
-    // kept here to demonstrate how data can be fetched
-    // using promises and fetch
-
-    setValue(data){
-        const {value} = data
-        if (f.isObject(data)) {
-            this.setState({
-                value,
-            })
-        }
-    }
-
-    setUrl(data){
-        const {url} = data
-        if (f.isObject(data)) {
-            this.setState({
-                url,
-            })
-        }
-    }
-
-    fetchData() {
-        // Fetching JSON using fetch/promises.
-        // This is to imitate how this potentially can work with an API
-        // NOTE: this is NOT USED in the resulting code, JSON data accessed using import
-        // fetchData is only shown here to demonstrate how data can be fetched
-        // using promises and fetch
-
-        fetch('./assets/data.json')
-            .then((res) => res.json())
-            .then((data) => {
-                const {hours, minutes, seconds} = data
-                this.setValue(data)
-                this.setUrl(data)
-                if (localStorage.getItem('timeRemaining')) {
-                    this.setState({
-                        hours: this.timeRemaining.hours,
-                        minutes: this.timeRemaining.minutes,
-                        seconds: this.timeRemaining.seconds,
-                        over: this.timeRemaining.over
-                    })
-                } else {
-                    this.setState( {
-                        hours,
-                        minutes,
-                        seconds,
-                    })
-                }
-            })
-            .catch(err => {
-            console.log(`Error: ${err}`)
-            // Load timer state from localStorage
-            this.setState({
-                value: 10,
-                url: c.CTA_URL_STRING,
-            })
-            if (localStorage.getItem('timeRemaining')) {
-                this.setState({
-                    hours: this.timeRemaining.hours,
-                    minutes: this.timeRemaining.minutes,
-                    seconds: this.timeRemaining.seconds,
-                    over: this.timeRemaining.over
-                })
-            } else {
-                // Fallback for JSON being unavailable
-                this.setState({
-                    hours: parseInt(0, 10),
-                    minutes: parseInt(3, 10),
-                    seconds: parseInt(0, 10),
-                    over: false,
-                })
-            }
-        })
     }
 
     onTick() {
@@ -144,13 +65,6 @@ export class Timer extends React.Component {
     };
 
     componentDidMount() {
-        // Used for debugging
-        // localStorage.clear()
-        // console.log(data)
-
-        // fetchData can be used if a real API is used
-        // NOTE: JSON file is accessed using import
-        // this.fetchData()
 
         // Interval is set on Mounting
         timerID = setInterval(() => this.onTick(), 1000);
@@ -209,6 +123,7 @@ export class Timer extends React.Component {
                         // Using position absolute so the image always stays at the top of the tile,
                         // as specified in brief
                         <m.Image
+                            alt={c.TITLE}
                             url={responsiveImg}
                             className='top-image'/>
                     )}

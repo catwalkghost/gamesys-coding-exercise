@@ -2,9 +2,7 @@ import React from 'react'
 
 import * as u from '../utils'
 
-export class BgImage extends React.Component {
-    render() {
-        const {cls, style, bgUrl} = this.props
+export function BgImage({cls, style, bgUrl}) {
         return (
             <div
                 style={{...style, backgroundImage: u.bgUrl(bgUrl)}}
@@ -13,26 +11,20 @@ export class BgImage extends React.Component {
                     cls
                 )}/>
         )
-    }
 }
 
-export class Image extends React.Component {
-    render() {
-        const {style, url, className} = this.props
+export function Image({style, url, className, alt}) {
         return (
             <img
                 className={`${className || ''}`}
                 style={style}
                 src={url}
-                alt='image-preview' />
+                alt={alt} />
         )
-    }
 }
 
 
-export class Button extends React.Component {
-    render(){
-        const {externalUrl, buttonText} = this.props
+export function Button({externalUrl, buttonText}) {
         return (
             <a href={externalUrl}>
             <div className='button text-center padding-0x5 text-uppercase '>
@@ -40,5 +32,4 @@ export class Button extends React.Component {
             </div>
             </a>
         )
-    }
 }

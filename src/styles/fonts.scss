@@ -1,6 +1,6 @@
 // Importing fonts as URL
 // for a larger project, it's better to import each font weight and style separately,
-// and load them from the own server/bundle, like this:
+// and load them from the own server/bundle using @font-face:
 
 //@font-face {
 //  font-family: 'Lato';
@@ -17,6 +17,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
+// Setting up body font, for all elements
 body {
   font-family: 'Lato', sans-serif;
 }
